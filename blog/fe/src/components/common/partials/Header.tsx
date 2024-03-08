@@ -71,7 +71,7 @@ export const Header = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Sign up</Link>
+          <Link href="/auth/register">Sign up</Link>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href="/auth/login" variant="flat">
