@@ -1,0 +1,41 @@
+[
+  {
+    "postId": 1,
+    "title": "Introduction to SQL",
+    "short_description": "Learn the basics of SQL with this introductory post.",
+    "cover_picture": "cover_picture_url_1.jpg",
+    "body": "This is the body of our first post. It covers SQL basics including SELECT, INSERT, UPDATE, and DELETE operations.",
+    "authorId": 1,
+    "author_username": "JaneDoe",
+    "category": "Technology",
+    "createdAt": "2024-03-08T09:00:00",
+    "updatedAt": null,
+    "deletedAt": null
+  },
+  {
+    "postId": 2,
+    "title": "Why Coding Matters",
+    "short_description": "Discussing the importance of learning to code in today's world.",
+    "cover_picture": "cover_picture_url_2.jpg",
+    "body": "This post explores the reasons why learning to code is more important than ever. Coding is not just for computer scientists but a valuable skill for everyone.",
+    "authorId": 1,
+    "author_username": "JaneDoe",
+    "category": "Education",
+    "createdAt": "2024-03-10T10:30:00",
+    "updatedAt": "2024-03-11T11:00:00",
+    "deletedAt": null
+  },
+  {
+    "postId": 3,
+    "title": "10 Tips for Healthy Living",
+    "short_description": "Simple and effective tips to improve your daily life.",
+    "cover_picture": "cover_picture_url_3.jpg",
+    "body": "Living a healthy life doesn't have to be complicated. Here are 10 easy tips to make your daily routine healthier.",
+    "authorId": 2,
+    "author_username": "JohnDoe",
+    "category": "Lifestyle",
+    "createdAt": "2024-03-12T15:20:00",
+    "updatedAt": null,
+    "deletedAt": null
+  }
+]
