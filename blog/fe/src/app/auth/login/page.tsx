@@ -6,9 +6,12 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default function LoginPage() {
+  const token = cookies().get("token");
+  if (token) {
+    redirect("/");
+  }
   async function login(formData: FormData) {
     "use server";
-
     const response = await loginService({
       username: formData.get("username") as string,
       password: formData.get("password") as string,
@@ -18,7 +21,6 @@ export default function LoginPage() {
       redirect("/management/blog");
     }
   }
-
   return (
     <section className="flex h-screen flex-col items-center justify-center gap-6 bg-gray-50 dark:bg-gray-900">
       <div className="mx-auto flex flex-col items-center justify-center px-6 py-8 lg:py-0">
