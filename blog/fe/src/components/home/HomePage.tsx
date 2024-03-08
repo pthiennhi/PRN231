@@ -1,13 +1,13 @@
 "use client";
 import { getBlogs } from "@/services/getBlogs.service";
 import { Blog } from "@/types/blog";
-import { Avatar } from "@nextui-org/react";
+import { Avatar, Spinner } from "@nextui-org/react";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import {
-    IoLogoGithub,
-    IoLogoLinkedin,
-    IoLogoTiktok,
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoLogoTiktok,
 } from "../common/icons/BrandIcon";
 import { BlogCard } from "./BlogCard";
 
@@ -22,6 +22,13 @@ export const HomePage = () => {
   });
   if (error) {
     return <div>Error: {error.message}</div>;
+  }
+  if (isLoading) {
+    return (
+      <main className="container flex items-center justify-center h-screen">
+        <Spinner size="lg" />
+      </main>
+    );
   }
 
   return (
@@ -82,10 +89,10 @@ export const HomePage = () => {
           <p className="font-bold text-gray-900">Nhi Pham</p>
           <p className="text-sm italic text-gray-700">Software Engineer</p>
           <p className="mt-2 font-medium text-gray-700">
-            Hi guys 👋, I&apos;m a developer specializing in 
-            Next.js. My blog shares practical tutorials and
-            insights based on 2+ years of hands-on experience. Open to freelance
-            opportunities &mdash; let&apos;s{" "}
+            Hi guys 👋, I&apos;m a developer specializing in Next.js. My blog
+            shares practical tutorials and insights based on 2+ years of
+            hands-on experience. Open to freelance opportunities &mdash;
+            let&apos;s{" "}
             <Link
               href="/contact"
               className="text-violet-600 underline duration-200 hover:text-violet-700"

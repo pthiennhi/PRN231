@@ -1,4 +1,3 @@
-import { Header } from "@/components/common/partials";
 import { cn } from "@/libs/common/utils";
 import { Providers } from "@/providers/Providers";
 import type { Metadata } from "next";
@@ -26,8 +25,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <Header />
-          <main className="container mx-auto">{children}</main>
+          {children}
         </Providers>
       </body>
     </html>
