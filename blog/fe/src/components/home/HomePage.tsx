@@ -10,6 +10,7 @@ import {
   IoLogoTiktok,
 } from "../common/icons/BrandIcon";
 import { BlogCard } from "./BlogCard";
+import BlogPagination from "../Pagination";
 
 export const HomePage = () => {
   const {
@@ -20,19 +21,20 @@ export const HomePage = () => {
     queryKey: ["blogs"],
     queryFn: getBlogs,
   });
+
   if (error) {
     return <div>Error: {error.message}</div>;
   }
   if (isLoading) {
     return (
-      <main className="container flex items-center justify-center h-screen">
+      <main className="container flex h-screen items-center justify-center">
         <Spinner size="lg" />
       </main>
     );
   }
 
   return (
-    <main className="mb-10 w-full md:mb-20">
+    <main className="mb-10 flex w-full flex-col items-center md:mb-20">
       <section className="my-10 xl:my-20">
         <h1 className="max-w-md text-center text-2xl font-bold !leading-relaxed tracking-tight text-gray-900 drop-shadow-xl duration-200 dark:text-gray-100 lg:max-w-lg lg:text-3xl xl:max-w-xl xl:text-4xl">
           Welcome to my blog!
@@ -42,13 +44,12 @@ export const HomePage = () => {
         <div className="flex w-full flex-col gap-10 md:grid md:grid-cols-2 md:gap-5 lg:gap-6">
           <BlogCard post={posts[0]} />
           <div className="flex h-full flex-col gap-6">
-            {posts.slice(1, 4)?.map((post: Blog) => {
-              return <BlogCard key={post.postId} post={post} />;
+            {posts.slice(1, 3)?.map((post: Blog) => {
+              return <BlogCard key={post.postId} style="side" post={post} />;
             })}
           </div>
         </div>
       )}
-
       <div className="shadow-card mt-10 flex w-full max-w-3xl flex-row gap-5 rounded-xl bg-violet-200 p-6 dark:bg-violet-300">
         <div className="flex w-fit min-w-[100px] flex-col items-center gap-3">
           <Avatar />
@@ -104,6 +105,7 @@ export const HomePage = () => {
           </p>
         </div>
       </div>
+      <BlogPagination />
     </main>
   );
 };
